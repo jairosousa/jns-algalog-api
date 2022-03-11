@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("clientes")
@@ -46,7 +48,7 @@ public class ClienteController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public Cliente adicionar(@RequestBody Cliente cliente) {
+  public Cliente adicionar(@Valid @RequestBody Cliente cliente) {
     return clienteRepository.save(cliente);
   }
 
