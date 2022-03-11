@@ -1,4 +1,4 @@
-package com.algaworks.algalog.algalogapi.controller;
+package com.algaworks.algalog.algalogapi.api.controller;
 
 import com.algaworks.algalog.algalogapi.domain.model.Cliente;
 import com.algaworks.algalog.algalogapi.domain.repository.ClienteRepository;
