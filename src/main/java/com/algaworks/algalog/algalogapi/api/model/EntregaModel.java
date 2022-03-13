@@ -4,6 +4,7 @@ import com.algaworks.algalog.algalogapi.domain.model.Cliente;
 import com.algaworks.algalog.algalogapi.domain.model.Destinatario;
 import com.algaworks.algalog.algalogapi.domain.model.StatusEntrega;
 import com.algaworks.algalog.algalogapi.domain.model.ValidationGroups;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -23,22 +24,20 @@ import java.time.OffsetDateTime;
  */
 @Getter
 @Setter
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class EntregaModel {
 
     private Long id;
 
-    private String nomeCliente;
+    private ClienteResumoModel cliente;
 
     private DestinatarioModel destinatario;
 
-    @NotNull
     private BigDecimal taxa;
 
     private StatusEntrega status;
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private OffsetDateTime dataPedido;
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private OffsetDateTime dataFinalizacao;
 }
